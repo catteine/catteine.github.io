@@ -1,0 +1,55 @@
+<style>
+					.rad {
+						position: relative;
+						width: 150px;
+						height: 150px;
+						overflow: hidden;
+						border-radius: 50%;
+						background: #ddd;
+						margin: 0 auto;
+					}
+					.rad_in {
+						position: absolute;
+						top: 0;
+						left: 0;
+						width: 150px;
+						height: 150px;
+						border-radius: 50%;
+						background: #333;
+						clip: rect(0px, 150px, 150px, 75px);
+					}
+					.in_2 {
+						transform: rotate(180deg);
+					}
+					.bar {
+						position: absolute;
+						top: 0;
+						left: 0;
+						width: 150px;
+						height: 150px;
+						border-radius: 50%;
+						background: #f00;
+						clip: rect(0px, 75px, 150px, 0);
+						transition: all .3s linear;
+					}
+					.in_1 .bar {
+						transform: rotate(0deg);
+					}
+					.in_2 .bar {
+						transform: rotate(0deg);
+					}
+				</style>
+				<div class="rad">
+					<div class="rad_in in_1"><div class="bar"></div></div>
+					<div class="rad_in in_2"><div class="bar"></div></div>
+				</div>
+				<script>
+					var rad = document.querySelector('.rad');
+					rad.addEventListener('click', function(){
+						rad.querySelector('.in_1 .bar').setAttribute('style', 'transform: rotate(180deg)');
+						setTimeout(function(){
+							
+						rad.querySelector('.in_2 .bar').setAttribute('style', 'transform: rotate(180deg)');
+						}, 300);
+					});
+				</script>
