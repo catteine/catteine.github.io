@@ -1,0 +1,106 @@
+  <span class="deepdive-bg">
+    <span class="deepdive-bg-title"></span>
+    <span class="deepdive-bg-item"><span class="deepdive-bg-thumb"></span><span class="deepdive-bg-text"></span></span>
+    <span class="deepdive-bg-item"><span class="deepdive-bg-thumb"></span><span class="deepdive-bg-text"></span></span>
+    <span class="deepdive-bg-item"><span class="deepdive-bg-thumb"></span><span class="deepdive-bg-text"></span></span>
+    <span class="deepdive-bg-item"><span class="deepdive-bg-thumb"></span><span class="deepdive-bg-text"></span></span>
+  </span>
+  
+  .recommend_wrap {
+  position: relative;
+  width: 750px;
+  height: 207px;
+
+  .deepdive-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 750px;
+    height: 207px;
+    overflow: hidden;
+    border-radius: 4px;
+    background: $white-bg;
+    z-index: -1;
+    .deepdive-bg-title {
+      display: block;
+      overflow: hidden;
+      padding: 20px 20px 16px;
+      letter-spacing: 0;
+      &::before {
+        float: left;
+        font-size: 14px;
+        font-weight: 700;
+        line-height: 21px;
+        content: '당신을 위한 맞춤 뉴스!';
+      }
+      &::after {
+        float: left;
+        color: $text-tertiary;
+        font-size: 12px;
+        line-height: 16px;
+        margin: 3px 0 0 8px;
+        content: '최근 본 뉴스 기사를 기반으로 새로운 뉴스를 추천합니다';
+      }
+    }
+    .deepdive-bg-item {
+      display: block;
+      float: left;
+      width: 160px;
+      margin: 0 3px 0 20px;
+     .deepdive-bg-thumb {
+       position: relative;
+        display: block;
+        height: 90px;
+        overflow: hidden;
+        border-radius: 2px;
+        background: rgba(0,0,0,.06);
+        &::after {
+          position: absolute;
+          top: 0;
+          left: -100px;
+          width: 100px;
+          height: 100%;
+          background: linear-gradient(to right, rgba(0,0,0,0) 0, rgba(255,255,255,.5) 60%, rgba(0,0,0,0) 100%);
+          content: '';
+          animation: lighting 1s infinite;
+        }
+      }
+      .deepdive-bg-text {
+        position: relative;
+        display: block;
+        height: 27px;
+        overflow: hidden;
+        background: rgba(0,0,0,.06);
+        margin-top: 10px;
+        &::before {
+          position: absolute;
+          top: 11px;
+          left: 0;
+          right: 0;
+          height: 11px;
+          border-top: 5px solid $white-bg;
+          border-right: 30px solid $white-bg;
+          content: '';
+          z-index: 5;
+        }
+        &::after {
+          position: absolute;
+          top: 0;
+          left: -100px;
+          width: 100px;
+          height: 100%;
+          background: linear-gradient(to right, rgba(0,0,0,0) 0, rgba(255,255,255,.5) 60%, rgba(0,0,0,0) 100%);
+          content: '';
+          animation: lighting 1s infinite;
+        }
+      }
+    }
+    @keyframes lighting {
+      0% {
+        left: -100px;
+      }
+      100% {
+        left: 100%;
+      }
+    }
+  }
